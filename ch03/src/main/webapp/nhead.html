@@ -21,7 +21,7 @@
 	height: 50px;
 	text-indent: 110%;
 	overflow: hidden;
-	background: url('images/sp_search.svg') no-repeat -2px -3px;
+	background:-2px -3px;
 }
 
 .header .search-box {
@@ -37,47 +37,95 @@
 }
 
 .search-box input{
-	width:274px;
+	width:262px;
 	height:46px;
+	margin-left:12px;
 	border:none;
 	outline:none;
+	font-size: 18px;
+	font-weight:700;
+    font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif;
 }
 
-.search-box #keyboard {
+a#keyboard {
 	width:30px;
 	height:20px;
 	margin-top: 18px;
 	margin-left: 8px;
 	font-size:0;
-	background: url('images/sp_search.svg') no-repeat -30px -60px;
+	background:-30px -60px;
 }
 
-.search-box #dropdown {
+a#keyboard.focused {
+	width:30px;
+	height:20px;
+	margin-top: 18px;
+	margin-left: 8px;
+	font-size:0;
+	background:-55px -60px;
+}
+
+a#dropdown {
 	width:20px;
 	height:30px;
-	margin-top: 10px;
+	margin-top: 11px;
 	margin-left: 5px;
 	font-size:0;
-	background: url('images/sp_search.svg') no-repeat -85px -50px;
+	background:-85px -50px;
 }
 
+a#dropdown.focused {
+	width:20px;
+	height:30px;
+	margin-top: 11px;
+	margin-left: 5px;
+	font-size:0;
+	background:-137px -50px;
+}
 .search-box .btn-search {
 	width:15%;
 	height:100%;
 	float:right;
 	background-color:#03CF5D;
 }
-  .search-box .btn-search button{ 
+.search-box .btn-search button{ 
  	width:40px; 
  	height:50px; 
  	margin-left:5px;
  	font-size:0; 
  	border:none; 
  	outline:none; 
- 	background: url('images/sp_search.svg') #03CF5D no-repeat 12px -50px; 
+ 	background:#03CF5D 12px -50px; 
  }  
-</style>
+ 
+a#keyboard.focused, a#dropdown.focused, .header .logo, .search-box #keyboard, .search-box #dropdown, .search-box .btn-search button {
+	background-image: url('images/sp_search.svg');
+	background-repeat: no-repeat;
+}
 
+</style>
+<script>
+	var bool = true;
+	function onDropClicked(el) {
+		if(bool){
+			el.className = "focused";
+			bool = false;
+		} else{
+			el.className = "";
+			bool = true;
+		}
+	}
+	
+	function onKeyClicked(el) {
+		if(bool){
+			el.className = "focused";
+			bool = false;
+		} else{
+			el.className = "";
+			bool = true;
+		}
+	}
+</script>
 </head>
 <body>
 	<div class = 'header'>
@@ -87,8 +135,8 @@
 			<div class ="btn-search">
 				<button>돋보기</button>	
 			</div>
-			<a href='#' id = 'keyboard'>키보드</a>
-			<a href='#' id = 'dropdown'>드롭다운</a>
+			<a href='#' id = 'keyboard' onclick='onKeyClicked(this);'>키보드</a>
+			<a href='#' id = 'dropdown' onclick='onDropClicked(this);'>드롭다운</a>
 		</div>
 	</div>
 </body>
