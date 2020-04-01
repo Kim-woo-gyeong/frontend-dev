@@ -5,4 +5,4 @@
 
 
 ## CSS TAG
-<p align="center"><img src="https://user-images.githubusercontent.com/53455867/78134740-8f1b5300-745b-11ea-9f03-581f10e1fc7f.png"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/59616862/78135338-b0c90a00-745c-11ea-89e8-e4fdd1433eb2.png"></p>
