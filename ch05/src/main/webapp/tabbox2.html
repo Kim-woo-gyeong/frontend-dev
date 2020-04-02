@@ -34,15 +34,23 @@ ul li.selected {background-color:#FFC080; }
 <script type="text/javascript">
 /*Dom Level 1 - element event attribute 사용하는 방식
 element의 event attribute 사용하는 방식. 
-1) tag에 바로 적용하기*/
-var liSelected = null;
-var onTabClicked = function(li) {
-	if(liSelected != null){
-		liSelected.className = '';
-	}
+2) java script code(DOM API) 로만 작성하기*/
+var onTabClicked = function() {
+	var liSelecteds = document.getElementsByClassName('selected');
 	
-	li.className= 'selected';
-	liSelected = li;
+	(liSelecteds.length == 1) && (liSelecteds[0].className='');
+	
+	this.className= 'selected';
+}
+window.onload = function(){
+	//div : class('tab-box')
+	var divTabBox = document.getElementsByClassName('tab-box')[0];
+	var ulTabBox = divTabBox.childNodes[1];
+	var liTabs = ulTabBox.getElementsByTagName('li');
+	
+	for(var i = 0; i < liTabs.length; i++){
+		liTabs[i].onclick = onTabClicked;
+	}
 }
 
 </script>
@@ -50,11 +58,11 @@ var onTabClicked = function(li) {
 <body>
 <div class="tab-box">
 	<ul>
-        <li onclick='onTabClicked(this);'>메뉴 5</li>
-        <li onclick='onTabClicked(this);'>메뉴 4</li>
-        <li onclick='onTabClicked(this);'>메뉴 3</li>
-        <li onclick='onTabClicked(this);'>메뉴 2</li>
-        <li onclick='onTabClicked(this);'>메뉴 1</li>
+        <li>메뉴 5</li>
+        <li>메뉴 4</li>
+        <li>메뉴 3</li>
+        <li>메뉴 2</li>
+        <li>메뉴 1</li>
     </ul>
     <div>
     	탭뷰입니다.
