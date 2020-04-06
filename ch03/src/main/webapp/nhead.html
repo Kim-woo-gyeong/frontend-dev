@@ -47,7 +47,7 @@
     font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif;
 }
 
-#keyboard {
+a#keyboard {
 	width:30px;
 	height:20px;
 	margin-top: 18px;
@@ -56,7 +56,7 @@
 	background:-30px -60px;
 }
 
-#keyboard.focused {
+a#keyboard.focused {
 	width:30px;
 	height:20px;
 	margin-top: 18px;
@@ -65,7 +65,7 @@
 	background:-57px -60px;
 }
 
-#dropdown {
+a#dropdown {
 	width:20px;
 	height:30px;
 	margin-top: 11px;
@@ -74,7 +74,7 @@
 	background:-85px -50px;
 }
 
-#dropdown.dropFocused {
+a#dropdown.focused {
 	width:20px;
 	height:30px;
 	margin-top: 11px;
@@ -98,7 +98,7 @@
  	background:#03CF5D 12px -50px; 
  }  
  
-a#dropdown, a#keyboard, .header .logo, .search-box .btn-search button {
+a#keyboard.focused, a#dropdown.focused, a#dropdown, a#keyboard, .header .logo, .search-box .btn-search button {
 	background-image: url('images/sp_search.svg');
 	background-repeat: no-repeat;
 }
@@ -106,7 +106,7 @@ a#dropdown, a#keyboard, .header .logo, .search-box .btn-search button {
 </style>
 <script>
 	var bool = true;
-	function onDropClicked(el) {
+	function onClicked(el) {
 		if(bool){
 			el.className = "focused";
 			bool = false;
@@ -115,16 +115,7 @@ a#dropdown, a#keyboard, .header .logo, .search-box .btn-search button {
 			bool = true;
 		}
 	}
-	
-	function onKeyClicked(el) {
-		if(bool){
-			el.className = "dropFocused";
-			bool = false;
-		} else{
-			el.className = "";
-			bool = true;
-		}
-	}
+
 </script>
 </head>
 <body>
@@ -135,8 +126,8 @@ a#dropdown, a#keyboard, .header .logo, .search-box .btn-search button {
 			<div class ="btn-search">
 				<button>돋보기</button>	
 			</div>
-			<a href='#' id = 'keyboard' onclick='onKeyClicked(this);'>키보드</a>
-			<a href='#' id = 'dropdown' onclick='onDropClicked(this);'>드롭다운</a>
+			<a href='#' id = 'keyboard' onclick='onClicked(this);'>키보드</a>
+			<a href='#' id = 'dropdown' onclick='onClicked(this);'>드롭다운</a>
 		</div>
 	</div>
 </body>
