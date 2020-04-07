@@ -20,14 +20,15 @@ var i = 10;
 	
 	{
 		var x = 10000; 
-		// 변수일때는 let..? 상수일때는 var?
+		// 변수일때는 let..? 상수일때는 const? var는 함수 scope가 생겨서 밖에서 사용x
 		const PI = 3.14;
 		x = 100;
-		PI = 0;
+		// 상수이기 때문에 오류 : 숫자를 바꾸면 안됨. PI = 0;
 		
 	}
 	//접근 안됨
 	//console.log(x);
+	console.log(x);
 	f();
 	console.log(i);
 	console.log(j);
