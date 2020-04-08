@@ -4,35 +4,48 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-	var MyObject = function(name, age) {
-		this.name = name;
-		this.age = age;
-	}
-	
-	MyObject.prototype.school = "bit";
-	MyObject.prototype.course = "douzone";
-	MyObject.prototype.info = function(){
-		console.log(this.name + ":" + this.age + ":" + this.school + ":" + this.course)
-	}
-	
-	//MyObject 객체 생성1
-	var o1 = new MyObject('둘리', 10);
-	
-	o1.school = "multicampus";
-	console.log(o1);
-	
-	//MyObject 객체 생성2
-	var o2 = new MyObject("마이콜", 30);
-	console.log(o2);
-	
-	//테스트
-	console.log(o1.school + ":" + o2.school);
-	
-	//o2 오버라이딩
-	o2.info();
+	window.addEventListener("load", function(){
+		var header1 = document.getElementById('header-01');
+		var header2 = document.getElementById('header-02');
+		
+		//TagName으로 가져오기
+		var header3 = document.getElementsByTagName('h3');
+		
+		//Class로 가져오기
+		var h4s = document.getElementsByClassName('header');
+		
+		//CSS로 가져오기.
+		var header7 = document.querySelector('#header-07');
+		var h5s = document.querySelectorAll('.header2');
+		
+		setTimeout(function(){
+			header1.innerText = "by getElementById()";
+			header2.innerText = "by getElementById()";
+			header1.style.color = "#f00";
+			
+			header3[0].innerText = "by getElementsByTagName()";
+			header3[1].innerText = "by getElementsByTagName()";
+			
+			h4s[0].innerText = "by getElementsByClassName()";
+			h4s[1].innerText = "by getElementsByClassName()";
+			
+			header7.innerText = "querySelector(#id)";
+			h5s[1].innerText = "querySelectorAll(.class)";
+		}, 1000);
+	});
 </script>
 </head>
 <body>
-	<h1>Prototype</h1>
+	<h1>HTMLElement 가져오기(탐색)</h1>
+	<h2 id='header-01'>Header 01</h2>
+	<h2 id='header-02'>Header 02</h2>
+	<h3>header3</h3>
+	<h3>header4</h3>
+	
+	<h4 class = 'header'>Header05</h4>
+	<h4 class = 'header'>Header06</h4>
+	
+	<h5 id='header-07' class = 'header2'>Header07</h5>
+	<h5 id='header-08' class = 'header2'>Header08</h5>
 </body>
 </html>

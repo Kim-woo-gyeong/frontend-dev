@@ -3,30 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-	var myVar1;
-	var myVar2 = null;
-	
-	console.log(myVar1 + ":" + myVar2);
-	console.log(typeof(myVar1) + ":" + typeof(myVar2));
-	console.log("=======================================");
-	
-	console.log(myVar1 == myVar2); //값비교. 형변환 일어남.
-	console.log('abc'== new String('abc'));
-	
-	console.log( true + 10 );
-	console.log( 'abc' + new String('abc') );
-	
-	console.log("=======================================");
-	// === : 객체의 동일성, 형변환x
-	console.log(myVar1 === myVar2); //타입 비교
-	
-	var str = "5";
-	console.log(parseInt(str) == 5);
-	
+
+<script src= 'browser-detect.js' type="text/javascript"></script>
+<script>
+//속성 확인
+var s = "";
+for(var property in location) {
+	s += (property + ":" + location[property] + "\n");
+}
+console.log(s);	
+
+BrowserDetect.init();
+console.log(BrowserDetect.browser);
+console.log(BrowserDetect.version);
+console.log(BrowserDetect.OS);
 </script>
 </head>
 <body>
-	<h1>null과 undefined</h1>
+	<h1>BOM(Browser Object Model)</h1>
+	<h2>4. navigator 객체</h2>
 </body>
 </html>

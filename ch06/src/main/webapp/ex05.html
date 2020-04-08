@@ -1,41 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Insert title here</title>
-
-
 <script type="text/javascript">
-//변수의 범위
-//1. 자바스크립트는 블록범위 없지만 블록내에서 var 사용 여부에 영향 받는다.
-//2. function{} 안에서 var를 사용하게 되면 function scope가 된다.
-var i = 10;
-	var f = function() {
-		var i = 20;
-		j = 100;
-		console.log(i);
-		i = j - i;
-	}
+	/*
+	용어정리
+	1. 태그(Tag)
+		- HTML 문서 안에서 텍스트나,콘텐츠를 정의할 때 사용하는 마크업
+	2. 문서객체(Document Object)
+		- Dom(Document Object Mode)이
+		- Tree 구성노드의 타입은 HTML Element
+		- JavaScript에서 접근하고 조작하는 것(document)
+	3. 노드(Node)
+		- Dom Tree의 각각의 요소
+	*/
 	
-	{
-		var x = 10000; 
-		// 변수일때는 let..? 상수일때는 const? var는 함수 scope가 생겨서 밖에서 사용x
-		const PI = 3.14;
-		x = 100;
-		// 상수이기 때문에 오류 : 숫자를 바꾸면 안됨. PI = 0;
-		
-	}
-	//접근 안됨
-	//console.log(x);
-	console.log(x);
-	f();
-	console.log(i);
-	console.log(j);
+	//Dom의 Loading이 완료된 시점.
+	window.addEventListener("load", function(){
+		var el = document.getElementById("header-1");
+		console.log(el);
+	})
 </script>
 
 </head>
 <body>
-	<h1>변수 범위</h1>
+	<h1 id = 'header-1'>step1</h1>
+	<script>alert("step2");</script>
+	<h1>step3</h1>
+	<script>alert("step4");</script>
 </body>
 </html>
