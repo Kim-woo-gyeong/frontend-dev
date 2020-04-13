@@ -5,13 +5,14 @@
 <script type="text/javascript" src="./jquery/jquery-3.4.1.js"></script>
 <script type="text/javascript">
 $(function(){
-	setTimeout(function(){
-		$('#p1').prepend('<strong>가나다라</strong>');
-	}, 2000);
+	$('button').click(function(){
+		$('p').load("http://localhost:8080/ch07/data.txt");
+	})
 })
 </script>
 </head>
 	<body>
-		<p id="p1">마바사아자차카타파하</p>
+		<button>버튼</button>
+		<p>변경전</p>
 	</body>
 </html>

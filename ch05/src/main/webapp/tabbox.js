@@ -1,6 +1,4 @@
-/*Dom Level 2 - 특정 Element의 Event의 Listener를 등록하는 방식 : 여러 Event 가능. 
-특정 event 핸들러(Listener)를 여러개 등록 할 수 있다.
-3) java script code(DOM API) 로만 작성하기*/
+
 var TabBox={
 		init: function(){
 			window.addEventListener('load', this._onWindowLoad);

@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="./jquery/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+email = $("in")
+$(function(){
+	$('button').click(function(){
+		$.ajax({
+			url : "http://localhost:8080/ch07/data.json",
+			async:true,
+			type: 'get',
+			/* contentType:'apllication/json', */
+			data: '',
+			dataType: 'json',
+			success:function(response){
+				console.log(response.result+":"+response.data);
+				},
+			/* XHR : Mapping하고 있는 xml 도출? */
+			error: function(XHR, status, e){
+				console.log(status+":" + e);
+			}
+		});
+	})
+})
+</script>
+</head>
+	<body>
+		<button>XML 가져오기</button>
+		<div>
+			<dl>
+			</dl>
+		</div>
+	</body>
+</html>

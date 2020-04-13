@@ -4,44 +4,21 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-var o = {
-		name: '마이콜',
-		age: 20,
-		hasProperty: function(property){
-			return property in this;
-		}
-}
-
-console.log(o.hasProperty("name"));
-console.log(o.hasProperty("email"));
-console.log(o.hasProperty("age"));
-
-console.log("======================================");
-
-console.log(o.hasOwnProperty("name"));
-console.log(o.hasOwnProperty("age"));
-console.log(o.hasOwnProperty("email"));
-
-console.log("==========with()=======================");
-
-with(o){
-	console.log(name + ":" + age);
-}
-
-console.log("=============== for~in ================");
-var data = "";
-for(var property in o){
-	if(typeof(o[property]) != 'function'){
-		data += (o[property] + ":");
-	}
-}
-console.log(data);
-
+// 이벤트 기본 동작 막기
+// form : validation
+// a : 버튼이나 메뉴로 사용(Click 이벤트) + Ajax 통신(javaScript 코드가 실행) 인 경우
+window.addEventListener('load', function(){
+	var button = document.getElementById('fetch-data');
+	button.addEventListener('click', function(event){
+		event.preventDefault();
+		console.log("start fetching.......");
+	})
+});
 </script>
 
 </head>
 
 <body>
-	<h1>in 연산자</h1>
+	<a href = "http://www.douozne.com" id = "fetch-data">데이터 가져오기</a>
 </body>
 </html>

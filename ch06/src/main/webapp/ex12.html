@@ -5,21 +5,50 @@
 <title>Insert title here</title>
 
 <script type="text/javascript">
-var s1 = "hello1";
-//에러 : not a function
-//s1.myFunction();'
-
-String.prototype.myFunction = function (){
-	console.log('myString : ' + this);
+//Dom Level Standard Event model
+//IE8 대응(Cross-browser) 이벤트 등록
+var registerEventHandler = function(element, eventName, handler) {
+/* 	
+ * 이 코드는 별로임. 
+ if(element == null) {
+		return;
+	}else{
+		
+	} */
+	
+	element && // element 가 null이 아니면,
+	element.attachEvent && // IE8
+	element.attachEvent('on' + eventName, handler);
+	
+	element && // element 가 null이 아니면,
+	element.addEventListener && // others
+	element.addEventListener(eventName, handler);
+	
+	console.log("!");
 }
-
-var s2 = "hello2";
-s2.myFunction();
+window.addEventListener('load', function(){
+	var header = document.getElementById("header");
+	var clickEventListener = function() {
+	      console.log('click!!!!!');
+	   }
+	header.addEventListener('click', clickEventListener);
+		
+	header.addEventListener('click', function(){
+		console.log('click2');
+	})
+	
+	// <- IE8 대응
+	registerEventHandler(header, 'click', function() {
+      console.log("click3");
+   })
+	
+	header.removeEventListener('click', clickEventListener);
+});
 </script>
 
 </head>
 
 <body>
-	<h1>String 확장</h1>
+	<h1 id='header'>Click</h1>
 </body>
 </html>

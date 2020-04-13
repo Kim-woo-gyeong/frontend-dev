@@ -1,0 +1,26 @@
+*						{ margin:0; padding:0 }
+ul 						{ list-style-type:none}
+body					{ font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
+.tab-box 				{ width:520px; margin: 50px auto 0; }
+
+ul { height:24px;}
+li	{ 
+		line-height:22px; 
+		text-align:center; 
+		margin-right:2px; 
+		border-radius:5px 5px 0 0; 
+		float:left; 
+		width:100px; 
+		height:22px; 
+		border:1px solid #999; 
+		background-color:#ccc;
+		cursor: pointer;}
+
+.tab-box div {
+		width:516px;  
+		border:1px solid #999; 
+		margin-top:-1px;
+		text-align:center;
+		line-height:200px}
+
+ul li.selected {background-color:#FFC080; }

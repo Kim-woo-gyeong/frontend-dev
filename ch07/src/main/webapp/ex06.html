@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>sample4</title>
+	<script type="text/javascript" src="./jquery/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+	//선택자 - ID
+	$(function(){
+		setTimeout(function(){
+			$("#first").css("color","red");
+			$("#second").css("color","pink");
+			
+		},2000);
+	});
+	</script>
+</head>
+<body>
+	<ul>
+		<li id = 'first'><strong> 텍스트 </strong> 텍스트 텍스트 텍스트 텍스트 </li>
+		<li id = 'second'><strong id="s1"> 텍스트 </strong> 텍스트 텍스트 텍스트 텍스트 </li>
+		<li class="red"><strong> 텍스트 </strong> 텍스트 텍스트 텍스트 텍스트 </li>
+		<li class="blue"><strong id="s2"> 텍스트 </strong> 텍스트 텍스트 텍스트 텍스트 </li>
+	</ul>
+
+</body>
+</html>

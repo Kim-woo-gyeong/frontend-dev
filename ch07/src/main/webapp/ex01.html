@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 개발 소스 버전 (내 서버 호스팅)-->
+<script type="text/javascript" src="./jquery/jquery-3.4.1.js"></script>
+<!--  압축버전(내 서버 호스팅) -->
+<!-- <script type="text/javascript" src="./jquery/jquery-3.4.1.min.js"></script> -->
+<!-- 개발소스 버전(CDN) -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+//jQuery는 함수 객체다
+// jQuery 함수는 jQuery객체라 부르는 object 타입의 객체를 반환한다.
+//jQuery 객체에 이쓴 ㄴ속성 jquery로 버전을 확인 할 수 있따.
+
+//$는 jQuery 함수 객체를 잠조한다.($는 jquery 함수 이름의 Allias다.)
+
+	var $object1 = jQuery();
+	console.log(typeof(jQuery), typeof($object1), $object1.jquery);
+	
+	var $Object2 = $();
+	console.log(typeof($), typeof($Object2), $Object2.jquery);
+</script>
+</head>
+<body>
+	<h1>JQuery 로딩</h1>
+</body>
+</html>
+ 
